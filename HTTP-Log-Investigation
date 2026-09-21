@@ -1,0 +1,25 @@
+# HTTP Log Investigation
+
+This project focuses on investigating HTTP log data using Splunk.
+
+## Objective
+
+To analyze HTTP logs, understand web traffic, identify relevant events, and investigate potentially suspicious activity using Splunk.
+
+## Tools Used
+
+- Splunk
+- SPL
+- HTTP Log Data
+
+## Investigation
+
+HTTP log data was ingested into Splunk and analyzed using SPL queries.
+
+## Key Areas
+
+- HTTP request analysis
+- Source IP analysis
+- HTTP status code analysis
+- Request/URL analysis
+- Log investigation
