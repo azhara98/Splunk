@@ -1,16 +1,22 @@
 # Field Extraction
 
-Field extraction in Splunk was performed on HTTP log data to extract relevant information from raw log events for further analysis.
+This project focuses on extracting relevant fields from HTTP log data using Splunk.
 
 ## Key Highlights
 
-- Analyzed HTTP log data in Splunk
-- Performed field extraction from log events
+- Analyzed raw HTTP log events
+- Performed field extraction
 - Used regex-based field extraction
-- Extracted relevant fields for analysis
-- Verified the extracted fields in Splunk
-- Used the extracted fields for further investigation
+- Extracted relevant information from log events
+- Verified extracted fields in Splunk
+- Used extracted fields for further analysis
 
-## Project Folder
+## Tools Used
 
-Field-Extraction
+- Splunk
+- SPL
+- Regular Expressions (Regex)
+
+## Investigation
+
+Relevant fields were extracted from the HTTP log data to make the events easier to search, analyze, and investigate in Splunk.
