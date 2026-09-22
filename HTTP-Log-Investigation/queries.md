@@ -45,3 +45,16 @@ index=main sourcetype="http logs"
 | search src_ip="192.168.202.79"
 | table _time, uri, status_code
 | head 20
+============================================================
+4. Cross-Site Scripting (XSS) Investigation
+Purpose:
+Identify HTTP requests containing common XSS payload patterns
+and review the requested URI and response status.
+============================================================
+
+Index=main sourcetype="http logs"
+| rex field=_raw "^(?<ts>[^\t]+)\t(?<uid>[^\t]+)\t(?<src_ip>[^\t]+)\t(?<src_port>[^\t]+)\t(?<dest_ip>[^\t]+)\t(?<dest_port>[^\t]+)\t(?<trans_depth>[^\t]+)\t(?<method>[^\t]+)\t(?<host>[^\t]+)\t(?<uri>[^\t]+)\t(?<referrer>[^\t]+)\t(?<user_agent>[^\t]+)\t(?<req_len>[^\t]+)\t(?<resp_len>[^\t]+)\t(?<status_code>[^\t]+)\t(?<status_msg>[^\t]+)\t(?<info_code>[^\t]+)\t(?<info_msg>[^\t]+)\t(?<filename>[^\t]+)\t(?<tags>[^\t]+)\t(?<username>[^\t]+)\t(?<password>[^\t]+)"
+| where match(uri, "(?i)<script") OR match(uri, "(?i)alert\(") OR match(uri, "(?i)onerror=") OR match(uri, "(?i)javascript:")
+| search src_ip="192.168.202.79"
+| table _time, uri, status_code
+| head 20
